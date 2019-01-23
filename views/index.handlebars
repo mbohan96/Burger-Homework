@@ -1,0 +1,47 @@
+<div class="container">
+    <div>
+            <img src="https://media.giphy.com/media/3oEduRhaW6LT3hifi8/giphy.gif"></img>
+            <h1>Eat-Da-Buger</h1>
+    </div>
+
+    <div class="row">
+        
+        
+        <div class="col-md-4 col-right">
+           
+            
+      {{#each burgers}}
+                
+  {{#unless devoured}}
+                
+                
+        {{> burgers/burger-block}}
+                    
+                    
+    {{/unless}}
+                
+                {{/each}}
+            
+     </div>
+        
+        
+        <div class="col-md-4 col-left">
+            {{#each burgers}}
+                {{#if devoured}}
+                    <div>{{id}}. {{burger_name}}</div>
+                {{/if}}
+            {{/each}}        
+        </div>    
+
+
+
+
+    </div>
+
+    <form class="create-form">
+        <div class="form-group">
+            <label>name</label>
+            <form id="name" name="burger-name" rows="6" cols="6" placeholder="What burger do you want"></form>
+        </div>
+        <button type="submit">Add Burger</button>
+    </form>     
